@@ -82,6 +82,7 @@ body {
   display: flex;
   gap: 76px;
   align-items: center;
+  height: 72px;
 }
 .navigation-list {
   display: flex;
@@ -96,7 +97,32 @@ body {
   color: var(--color-tx-ourworkers);
 
   letter-spacing: 0.02em;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.link-active::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: 2px;
+  background-color: var(--btn-text-color);
+}
+.navigation-link:focus::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: 2px;
+  background-color: var(--btn-text-color);
+}
+.navigation-link:hover::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: 2px;
+  background-color: var(--btn-text-color);
+}
+
 .navigation-link:hover {
   color: var(--btn-text-color);
 }
@@ -115,10 +141,11 @@ address {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contacts-link:hover {
-  color: var(--btn-text-color);
-}
+.contacts-link:hover,
 .contacts-link:focus {
   color: var(--btn-text-color);
 }
@@ -162,16 +189,13 @@ address {
   display: block;
   margin: 0 auto;
   border: none;
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-button:hover {
-  background: var(--second-btn-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-}
+.hero-button:hover,
 .hero-button:focus {
   background: var(--second-btn-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
 }
 
 /*-----------Strengths--------------*/
@@ -284,16 +308,18 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: var(--first-btn-color);
+  transition-property: background-сolor;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-list-link:hover,
+.icon-list-link:focus {
+  background-color: var(--second-btn-color);
 }
 .team-icon {
   fill: var(--btn-bg-color);
 }
-.icon-list-link:hover {
-  background-color: var(--second-btn-color);
-}
-.icon-list-link:focus {
-  background-color: var(--second-btn-color);
-}
+
 /* ------------customers----------- */
 .customers {
   padding-top: 130px;
@@ -323,16 +349,21 @@ img {
   height: 88px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list-link:hover,
 .customers-list-link:focus {
   border: 1px solid var(--second-btn-color);
-  border-radius: 4psx;
 }
 
 .customers-icon {
   fill: #8e8f99;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list-link:focus .customers-icon,
@@ -392,11 +423,15 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: #31d0aa;
 }
+
 .social-icon {
   fill: var(--btn-bg-color);
 }
@@ -424,9 +459,11 @@ img {
   padding: 12px 24px;
   border: 1px solid var(--btn-sol-color);
   border-radius: 4px;
-
   letter-spacing: 0.04em;
   color: var(--btn-text-color);
+  transition-property: background, box-shadow, border-radius, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-icon:hover,
@@ -435,7 +472,6 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  letter-spacing: 0.04em;
 
   color: var(--text-color-hero);
 }
@@ -463,12 +499,10 @@ img {
   top: 0;
   left: 0;
   background-color: #4d5ae5;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   transform: translateY(100%);
+  transition-property: background-color, transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0;
 }
 
 .cards-item:hover .overlay-card,
@@ -482,6 +516,9 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cards-description:hover,
 .cards-description:focus {
@@ -505,4 +542,66 @@ img {
   margin-bottom: 8px;
   letter-spacing: 0.02em;
   color: var(--color-tx-ourworkers);
+}
+/* =============== modal window ================*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  z-index: 100;
+  transition: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  transition-delay: 0;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  width: 408px;
+  height: 576px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  height: 24px;
+  width: 24px;
+  transition-property: background-color, border-radius;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--second-btn-color);
+  border-radius: 4px;
+}
+.modal-close-btn-icon {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+  fill: #ffffff;
 }
