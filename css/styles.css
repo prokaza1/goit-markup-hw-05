@@ -82,7 +82,6 @@ body {
   display: flex;
   gap: 76px;
   align-items: center;
-  height: 72px;
 }
 .navigation-list {
   display: flex;
@@ -92,7 +91,7 @@ body {
   display: block;
   padding: 24px 0;
   font-weight: 500;
-
+  position: relative;
   line-height: 1.33;
   color: var(--color-tx-ourworkers);
 
@@ -102,13 +101,16 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-active::after {
+  position: absolute;
   content: "";
   display: block;
-  width: inherit;
-  height: 2px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -1px;
   background-color: var(--btn-text-color);
 }
-.navigation-link:focus::after {
+/* .navigation-link:focus::after {
   content: "";
   display: block;
   width: inherit;
@@ -121,7 +123,7 @@ body {
   width: inherit;
   height: 2px;
   background-color: var(--btn-text-color);
-}
+} */
 
 .navigation-link:hover {
   color: var(--btn-text-color);
@@ -461,7 +463,7 @@ img {
   border-radius: 4px;
   letter-spacing: 0.04em;
   color: var(--btn-text-color);
-  transition-property: background, box-shadow, border-radius, color;
+  transition-property: background, box-shadow, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -471,7 +473,6 @@ img {
   background: var(--second-btn-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 
   color: var(--text-color-hero);
 }
@@ -491,8 +492,6 @@ img {
 
   padding: 40px 32px;
   color: #f4f4fd;
-}
-.overlay-card {
   position: absolute;
   width: 360px;
   height: 300px;
@@ -500,13 +499,13 @@ img {
   left: 0;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition-property: background-color, transform;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cards-item:hover .overlay-card,
-.cards-item:focus .overlay-card {
+.cards-item:hover .overlay-text,
+.cards-item:focus .overlay-text {
   transform: translateY(0);
 }
 .cards-description {
@@ -554,7 +553,8 @@ img {
   z-index: 100;
   transition: opacity, visibility;
   transition-duration: 250ms;
-  transition-timing-function: linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   transition-delay: 0;
 }
 .backdrop.is-hidden {
@@ -587,14 +587,13 @@ img {
   right: 24px;
   height: 24px;
   width: 24px;
-  transition-property: background-color, border-radius;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: var(--second-btn-color);
-  border-radius: 4px;
 }
 .modal-close-btn-icon {
   transition-property: fill;
