@@ -209,7 +209,6 @@ address {
 .strengths-icon {
   box-sizing: border-box;
   border-width: 264px 112px;
-
   background: var(--btn-bg-color);
   border-radius: 4px;
 }
@@ -220,6 +219,7 @@ address {
   align-items: center;
   width: 264px;
   height: 112px;
+  border-radius: 4px;
   background-color: var(--btn-bg-color);
 }
 .strengths-title {
@@ -516,8 +516,8 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.cards-description:hover,
-.cards-description:focus {
+.cards-item:focus .cards-description,
+.cards-item:hover .cards-description {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
